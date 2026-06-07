@@ -1,129 +1,60 @@
 ﻿# API Tests for Kits Service
 
-Проект содержит API-автотесты для сервиса создания пользовательских наборов (Kits).
+This repository contains automated API tests for a REST service that creates user kits.
 
-## Что проверяется
+The project demonstrates basic API testing and test automation skills using Python, pytest, and requests.
 
-- Валидация входных данных
-- Негативные сценарии (invalid input)
-- Граничные значения (boundary values)
-- Корректность HTTP-ответов
+## What is tested
 
-## Содержание проекта
+* Kit creation via API
+* Validation of the kit `name` field
+* Positive test scenarios
+* Negative test scenarios
+* Boundary value checks
+* API response status codes
+* Response body validation
 
-Структура файлов:
+## Tools and Technologies
 
-```
+* Python
+* pytest
+* requests
+* Git / GitHub
 
+## Project Structure
+
+```text
 api-tests-kits-service/
-│── configuration.py            # Базовые URL и пути API
-│── data.py                     # Тела запросов и заголовки
-│── sender_stand_request.py     # Функции отправки HTTP-запросов
-│── create_kit_name_kit_test.py # Автотесты по чек-листу
-│── README.md                   # Описание проекта
-│── .gitignore                  # Исключения для Git
-
+├── configuration.py              # Base URL and API paths
+├── data.py                       # Test data
+├── sender_stand_request.py       # API request helper functions
+├── create_kit_name_kit_test.py   # Automated API tests
+├── README.md                     # Project documentation
+└── .gitignore                    # Ignored local and generated files
 ```
 
----
+## How to Run Tests
 
-## Установка и запуск
-
-### 1. Клонировать репозиторий
-
-```bash
-git clone https://github.com/irina-miroshnikova/api-tests-kits-service.git
-```
-
-### 2. Перейти в директорию проекта
-
-```bash
-cd api-tests-kits-service
-```
-
-### 3. Создать виртуальное окружение
-
-```bash
-python -m venv .venv
-```
-
-### 4. Активировать окружение
-
-**Windows PowerShell:**
-
-```bash
-.venv\Scripts\Activate.ps1
-```
-
-**Windows CMD:**
-
-```cmd
-.venv\Scripts\activate.bat
-```
-
-**Git Bash:**
-
-```bash
-source .venv/Scripts/activate
-```
-
-### 5. Установить зависимости
-
-Если есть requirements.txt:
-
-```bash
-pip install -r requirements.txt
-```
-
-Если файла нет:
+Install dependencies:
 
 ```bash
 pip install pytest requests
 ```
 
----
-
-## Запуск тестов
-
-### Запустить все тесты
+Run tests:
 
 ```bash
-pytest -s
+pytest
 ```
 
-### Запустить конкретный тест
+## QA Focus
 
-```bash
-pytest create_kit_name_kit_test.py::test_kit_name_1_symbol -s
-```
+The project focuses on checking how the API handles valid and invalid values in the kit `name` field.
 
----
+The tests help verify that the API returns expected status codes and handles input validation correctly.
 
-## Описание логики тестов
-Тесты реализуют проверку валидации данных API и обработки ошибок.
-Тесты проверяют:
+## Notes
 
-* допустимую длину поля `name`;
-* пустые значения;
-* превышение максимальной длины;
-* спецсимволы, пробелы, цифры;
-* отсутствие параметра;
-* неверный тип (число);
-* корректные ответы сервера (201 и 400).
+This is a training QA project.
 
-Позитивные и негативные проверки вынесены в отдельные функции для удобства переиспользования.
-
----
-
-## Требования
-
-* Python 3.10+
-* Pytest
-* Requests
-* Активный стенд Практикума (URL указан в `configuration.py`).
-
----
-
-## Примечание
-
-Некоторые тесты могут завершиться статусом **FAILED**, если сервер возвращает некорректный ответ.
+No real credentials, tokens, or confidential data are stored in this repository.
