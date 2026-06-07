@@ -38,7 +38,7 @@ api-tests-kits-service/
 Install dependencies:
 
 ```bash
-pip install pytest requests
+pip install -r requirements.txt
 ```
 
 Run tests:
