@@ -29,6 +29,7 @@ api-tests-kits-service/
 ├── data.py                       # Test data
 ├── sender_stand_request.py       # API request helper functions
 ├── create_kit_name_kit_test.py   # Automated API tests
+├── requirements.txt              # Project dependencies
 ├── README.md                     # Project documentation
 └── .gitignore                    # Ignored local and generated files
 ```
